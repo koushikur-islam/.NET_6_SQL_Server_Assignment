@@ -12,20 +12,6 @@
           "bin/placeholder/Business_Entity_Layer.dll": {}
         }
       },
-      "Business_Logic_Layer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Business_Entity_Layer": "1.0.0",
-          "Data_Access_Layer": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Business_Logic_Layer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Business_Logic_Layer.dll": {}
-        }
-      },
       "Data_Access_Layer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -44,11 +30,6 @@
       "path": "../Business_Entity_Layer/Business_Entity_Layer.csproj",
       "msbuildProject": "../Business_Entity_Layer/Business_Entity_Layer.csproj"
     },
-    "Business_Logic_Layer/1.0.0": {
-      "type": "project",
-      "path": "../Business_Logic_Layer/Business_Logic_Layer.csproj",
-      "msbuildProject": "../Business_Logic_Layer/Business_Logic_Layer.csproj"
-    },
     "Data_Access_Layer/1.0.0": {
       "type": "project",
       "path": "../Data_Access_Layer/Data_Access_Layer.csproj",
@@ -58,7 +39,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Business_Entity_Layer >= 1.0.0",
-      "Business_Logic_Layer >= 1.0.0"
+      "Data_Access_Layer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -67,11 +48,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi.csproj",
-      "projectName": "TaskManagementSystem_WebApi",
-      "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi.csproj",
+      "projectUniqueName": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj",
+      "projectName": "Business_Logic_Layer",
+      "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi\\obj\\",
+      "outputPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,8 +72,8 @@
             "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Entity_Layer\\Business_Entity_Layer.csproj": {
               "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Entity_Layer\\Business_Entity_Layer.csproj"
             },
-            "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj": {
-              "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj"
+            "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj": {
+              "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj"
             }
           }
         }
@@ -117,9 +98,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
