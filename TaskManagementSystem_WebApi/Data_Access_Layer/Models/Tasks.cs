@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Models
 {
-    public class Task
+    public class Tasks
     {
-        public Task()
+        public Tasks()
         {
-            RequestLogs = new HashSet<RequestLog>();
+            RequestLogs = new HashSet<RequestLogs>();
         }
 
         public int Id { get; set; }
@@ -22,7 +22,7 @@ namespace Data_Access_Layer.Models
         public int AssignedBy { get; set; }
         public int AssignedTo { get; set; }
 
-        public virtual Person AssignedByNavigation { get; set; } = null!;
-        public virtual ICollection<RequestLog> RequestLogs { get; set; }
+        public virtual Persons AssignedByNavigation { get; set; } = null!;
+        public virtual ICollection<RequestLogs> RequestLogs { get; set; }
     }
 }

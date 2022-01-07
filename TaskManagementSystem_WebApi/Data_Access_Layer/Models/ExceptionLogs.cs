@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Models
 {
-    public class ExceptionLog
+    public class ExceptionLogs
     {
         public int Id { get; set; }
     }

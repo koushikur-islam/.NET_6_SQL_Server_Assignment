@@ -1,4 +1,5 @@
 ﻿using Data_Access_Layer.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Repository
 {
-    public class PersonRepository:Repository<Person>
+    public class PersonRepository:Repository<Persons>
     {
-        public PersonRepository(IOptions<ConnectionStrings> connectionStrings):base(connectionStrings)
+        public PersonRepository(IConfiguration configuration):base(configuration)
         {
 
         }

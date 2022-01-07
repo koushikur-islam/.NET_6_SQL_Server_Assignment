@@ -11,21 +11,26 @@ namespace Data_Access_Layer.Models
 {
     public class TaskManagementSystemDbContext:DbContext
     {
-        private readonly IOptions<ConnectionStrings> _connectionStrings;
-        public TaskManagementSystemDbContext(IOptions<ConnectionStrings> connectionStrings) : base()
+        //private readonly IOptions<ConnectionStrings> _connectionStrings;
+        //public TaskManagementSystemDbContext(IOptions<ConnectionStrings> connectionStrings) : base()
+        //{
+        //    _connectionStrings = connectionStrings;
+        //}
+        private readonly IConfiguration _configuration;
+        public TaskManagementSystemDbContext(IConfiguration configuration) : base()
         {
-            _connectionStrings = connectionStrings;
+            _configuration = configuration;
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_connectionStrings.Value.ConnectionString);
+                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("ConnectionString"));
             }
         }
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Task> Tasks { get; set; }
-        public DbSet<RequestLog> RequestLogs { get; set; }
-        public DbSet<ExceptionLog> ExceptionLogs { get; set; }
+        public DbSet<Persons> Persons { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
+        public DbSet<RequestLogs> RequestLogs { get; set; }
+        public DbSet<ExceptionLogs> ExceptionLogs { get; set; }
     }
 }

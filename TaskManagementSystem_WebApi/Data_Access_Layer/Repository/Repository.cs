@@ -12,12 +12,19 @@ namespace Data_Access_Layer.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly IOptions<ConnectionStrings> _connectionStrings;
+        //private readonly IOptions<ConnectionStrings> _connectionStrings;
+        //private readonly TaskManagementSystemDbContext _context;
+        //public Repository(IOptions<ConnectionStrings> connectionStrings)
+        //{
+        //    _connectionStrings  = connectionStrings;
+        //    _context = new TaskManagementSystemDbContext(_connectionStrings);
+        //}
+        private readonly IConfiguration _configuration;
         private readonly TaskManagementSystemDbContext _context;
-        public Repository(IOptions<ConnectionStrings> connectionStrings)
+        public Repository(IConfiguration configuration)
         {
-            _connectionStrings  = connectionStrings;
-            _context = new TaskManagementSystemDbContext(_connectionStrings);
+            _configuration = configuration;
+            _context = new TaskManagementSystemDbContext(configuration);
         }
 
         public async Task<bool> InsertAsync(TEntity entity)

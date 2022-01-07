@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Models
 {
-    public class Person
+    public class Persons
     {
-        public Person()
+        public Persons()
         {
-            Tasks = new HashSet<Task>();
+            Tasks = new HashSet<Tasks>();
         }
 
         public int Id { get; set; }
@@ -20,6 +20,6 @@ namespace Data_Access_Layer.Models
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        public virtual ICollection<Task> Tasks { get; set; }
+        public virtual ICollection<Tasks> Tasks { get; set; }
     }
 }

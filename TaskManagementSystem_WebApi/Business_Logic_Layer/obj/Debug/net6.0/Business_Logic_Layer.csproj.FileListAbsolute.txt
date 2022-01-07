@@ -1,0 +1,17 @@
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Business_Logic_Layer.deps.json
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Business_Logic_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\ref\Business_Logic_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Business_Logic_Layer.pdb
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Business_Entity_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Data_Access_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Business_Entity_Layer.pdb
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\bin\Debug\net6.0\Data_Access_Layer.pdb
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.csproj.AssemblyReference.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.AssemblyInfoInputs.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.AssemblyInfo.cs
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.csproj.CoreCompileInputs.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.csproj.CopyComplete
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\ref\Business_Logic_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Logic_Layer\obj\Debug\net6.0\Business_Logic_Layer.pdb
