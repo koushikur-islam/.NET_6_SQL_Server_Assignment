@@ -214,6 +214,9 @@
               },
               "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj": {
                 "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj"
+              },
+              "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj": {
+                "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj"
               }
             }
           }

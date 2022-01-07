@@ -10,6 +10,7 @@
         "dependencies": {
           "Business_Entity_Layer": "1.0.0",
           "Business_Logic_Layer": "1.0.0",
+          "Data_Access_Layer": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.1"
         },

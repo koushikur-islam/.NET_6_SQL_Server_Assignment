@@ -1908,6 +1908,7 @@
     "net6.0": [
       "Business_Entity_Layer >= 1.0.0",
       "Business_Logic_Layer >= 1.0.0",
+      "Data_Access_Layer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.1"
     ]
@@ -1944,6 +1945,9 @@
             },
             "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj": {
               "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj"
+            },
+            "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj": {
+              "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj"
             }
           }
         }

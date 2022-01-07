@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace Data_Access_Layer.Models
 {
     public class TaskManagementSystemDbContext:DbContext
     {
-        private readonly IConfiguration _configuration;
-        public TaskManagementSystemDbContext(IConfiguration configuration) : base()
+        private readonly IOptions<ConnectionStrings> _connectionStrings;
+        public TaskManagementSystemDbContext(IOptions<ConnectionStrings> connectionStrings) : base()
         {
-            _configuration = configuration;
+            _connectionStrings = connectionStrings;
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnectionString"));
+                optionsBuilder.UseSqlServer(_connectionStrings.Value.ConnectionString);
             }
         }
         public DbSet<Person> Persons { get; set; }
