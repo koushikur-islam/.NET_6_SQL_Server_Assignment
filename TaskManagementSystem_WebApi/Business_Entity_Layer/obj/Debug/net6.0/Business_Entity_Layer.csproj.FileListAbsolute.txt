@@ -1,0 +1,11 @@
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\bin\Debug\net6.0\Business_Entity_Layer.deps.json
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\bin\Debug\net6.0\Business_Entity_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\bin\Debug\net6.0\ref\Business_Entity_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\bin\Debug\net6.0\Business_Entity_Layer.pdb
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\Business_Entity_Layer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\Business_Entity_Layer.AssemblyInfoInputs.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\Business_Entity_Layer.AssemblyInfo.cs
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\Business_Entity_Layer.csproj.CoreCompileInputs.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\Business_Entity_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\ref\Business_Entity_Layer.dll
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\Business_Entity_Layer\obj\Debug\net6.0\Business_Entity_Layer.pdb
