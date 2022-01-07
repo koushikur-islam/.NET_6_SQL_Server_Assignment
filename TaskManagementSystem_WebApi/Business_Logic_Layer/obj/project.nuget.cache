@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "n946aFe+R9jlPqgpwLc1Z2eBjcRnt0bdIZig7wOQDX04akYRaf3qWCnhjYMvfDIdLG8SoozgANYIokdjUjLpyA==",
+  "dgSpecHash": "nOtrylnTOmPM6vOq7Dwp+GOxlVHm9l8d02tTwORKabGbmaJd/prVJANgAqBbzy1loEegDsUze0VfUXffvMC08A==",
   "success": true,
   "projectFilePath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.1\\microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
