@@ -645,28 +645,11 @@
       "Business_Logic_Layer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Business_Entity_Layer": "1.0.0",
-          "Data_Access_Layer": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/Business_Logic_Layer.dll": {}
         },
         "runtime": {
           "bin/placeholder/Business_Logic_Layer.dll": {}
-        }
-      },
-      "Data_Access_Layer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Data_Access_Layer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Data_Access_Layer.dll": {}
         }
       }
     }
@@ -1897,18 +1880,12 @@
       "type": "project",
       "path": "../Business_Logic_Layer/Business_Logic_Layer.csproj",
       "msbuildProject": "../Business_Logic_Layer/Business_Logic_Layer.csproj"
-    },
-    "Data_Access_Layer/1.0.0": {
-      "type": "project",
-      "path": "../Data_Access_Layer/Data_Access_Layer.csproj",
-      "msbuildProject": "../Data_Access_Layer/Data_Access_Layer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Business_Entity_Layer >= 1.0.0",
       "Business_Logic_Layer >= 1.0.0",
-      "Data_Access_Layer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.1"
     ]
@@ -1945,9 +1922,6 @@
             },
             "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj": {
               "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj"
-            },
-            "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj": {
-              "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj"
             }
           }
         }

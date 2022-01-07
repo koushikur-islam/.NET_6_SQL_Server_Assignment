@@ -1,5 +1,4 @@
-﻿using Data_Access_Layer.Models;
-using Data_Access_Layer.Repository;
+﻿using Data_Access_Layer.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;

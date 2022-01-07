@@ -83,10 +83,12 @@
             "targetAlias": "net6.0",
             "projectReferences": {
               "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Entity_Layer\\Business_Entity_Layer.csproj": {
-                "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Entity_Layer\\Business_Entity_Layer.csproj"
+                "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Entity_Layer\\Business_Entity_Layer.csproj",
+                "privateAssets": "all"
               },
               "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj": {
-                "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj"
+                "projectPath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Data_Access_Layer\\Data_Access_Layer.csproj",
+                "privateAssets": "all"
               }
             }
           }
