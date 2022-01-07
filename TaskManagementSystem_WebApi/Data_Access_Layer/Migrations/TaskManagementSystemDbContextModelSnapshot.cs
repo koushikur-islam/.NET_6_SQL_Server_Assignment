@@ -54,7 +54,7 @@ namespace Data_Access_Layer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -70,17 +70,21 @@ namespace Data_Access_Layer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("CompletedAt")
+                    b.Property<DateTime?>("CompletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DueAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TaskId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TaskId");
 
                     b.ToTable("RequestLogs");
                 });
@@ -94,6 +98,9 @@ namespace Data_Access_Layer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AssignedBy")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AssignedByNavigationId")
                         .HasColumnType("int");
 
                     b.Property<int>("AssignedTo")
@@ -110,12 +117,46 @@ namespace Data_Access_Layer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedAt")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AssignedByNavigationId");
+
                     b.ToTable("Tasks");
+                });
+
+            modelBuilder.Entity("Data_Access_Layer.Models.RequestLog", b =>
+                {
+                    b.HasOne("Data_Access_Layer.Models.Task", "Task")
+                        .WithMany("RequestLogs")
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Task");
+                });
+
+            modelBuilder.Entity("Data_Access_Layer.Models.Task", b =>
+                {
+                    b.HasOne("Data_Access_Layer.Models.Person", "AssignedByNavigation")
+                        .WithMany("Tasks")
+                        .HasForeignKey("AssignedByNavigationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AssignedByNavigation");
+                });
+
+            modelBuilder.Entity("Data_Access_Layer.Models.Person", b =>
+                {
+                    b.Navigation("Tasks");
+                });
+
+            modelBuilder.Entity("Data_Access_Layer.Models.Task", b =>
+                {
+                    b.Navigation("RequestLogs");
                 });
 #pragma warning restore 612, 618
         }
