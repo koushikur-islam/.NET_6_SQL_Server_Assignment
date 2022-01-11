@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Business_Entity_Layer.DTO;
+using Data_Access_Layer.Models;
 using Data_Access_Layer.Repository;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -19,9 +20,9 @@ namespace Business_Logic_Layer.Services
             _personRepository = new PersonRepository(configuration);
             _mapper = mapper;
         }
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _personRepository.DeleteAsync(id);
         }
 
         public async Task<List<PersonDto>> GetAsync()
@@ -34,14 +35,23 @@ namespace Business_Logic_Layer.Services
             return _mapper.Map<PersonDto>(await _personRepository.GetAsync(id));
         }
 
-        public Task<bool> InsertAsync(PersonDto person)
+        public async Task<bool> InsertAsync(PersonDto personDto)
         {
-            throw new NotImplementedException();
+            personDto.CreatedAt = DateTime.Now;
+            personDto.UpdatedAt = DateTime.Now;
+            return await _personRepository.InsertAsync(_mapper.Map<Persons>(personDto));
         }
 
-        public Task<bool> UpdateAsync(int id, PersonDto person)
+        public async Task<bool> UpdateAsync(int id, PersonDto personDto)
         {
-            throw new NotImplementedException();
+            var person = await _personRepository.GetAsync(id);
+            if (person != null)
+            {
+                person.Name = personDto.Name;
+                person.UpdatedAt = DateTime.Now;
+                return await _personRepository.UpdateAsync(person);
+            }
+            return false;
         }
     }
 }

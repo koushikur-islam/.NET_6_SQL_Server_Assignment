@@ -1,3 +1,9 @@
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.csproj.AssemblyReference.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.AssemblyInfoInputs.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.AssemblyInfo.cs
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.csproj.CoreCompileInputs.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\appsettings.Development.json
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\appsettings.json
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\TaskManagementSystem_WebApi.exe
@@ -47,12 +53,6 @@ D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSyst
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\Business_Entity_Layer.pdb
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\Business_Logic_Layer.pdb
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\Data_Access_Layer.pdb
-D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.csproj.AssemblyReference.cache
-D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.GeneratedMSBuildEditorConfig.editorconfig
-D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.AssemblyInfoInputs.cache
-D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.AssemblyInfo.cs
-D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.csproj.CoreCompileInputs.cache
-D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.MvcApplicationPartsAssemblyInfo.cache
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\staticwebassets.build.json
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\staticwebassets.development.json
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\scopedcss\bundle\TaskManagementSystem_WebApi.styles.css

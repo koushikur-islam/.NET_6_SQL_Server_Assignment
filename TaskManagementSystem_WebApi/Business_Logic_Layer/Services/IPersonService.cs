@@ -11,8 +11,8 @@ namespace Business_Logic_Layer.Services
     {
         public Task<List<PersonDto>> GetAsync();
         public Task<PersonDto> GetAsync(int id);
-        public Task<bool> InsertAsync(PersonDto person);
-        public Task<bool> UpdateAsync(int id,PersonDto person);
+        public Task<bool> InsertAsync(PersonDto personDto);
+        public Task<bool> UpdateAsync(int id, PersonDto personDto);
         public Task<bool> DeleteAsync(int id);
 
     }
