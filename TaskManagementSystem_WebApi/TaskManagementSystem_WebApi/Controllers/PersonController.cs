@@ -74,12 +74,14 @@ namespace TaskManagementSystem_WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (await _personService.GetAsync(id) != null)
+                var person = await _personService.GetAsync(id);
+                if (person != null)
                 {
                     var res = await _personService.UpdateAsync(id, personDto);
                     if (res)
                     {
-                        return Ok();
+                        person.Name = personDto.Name;
+                        return Ok(person);
                     }
                     return BadRequest("Failed to update person!");
                 }

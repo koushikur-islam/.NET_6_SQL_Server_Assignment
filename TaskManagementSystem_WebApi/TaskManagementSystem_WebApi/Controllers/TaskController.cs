@@ -16,14 +16,31 @@ namespace TaskManagementSystem_WebApi.Controllers
         }
         //Get all the tasks in the systen
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery] string? keyword)
         {
-            var taskList = await _taskService.GetAsync();
-            if (taskList.Count() > 0)
+            IEnumerable<TaskDto> tasks;
+
+            if (keyword!=null)
             {
-                return Ok(taskList);
+                tasks = await _taskService.GetAsync(keyword);
+                if (tasks.Count() >0 )
+                {
+                    return Ok(tasks);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
-            return NoContent();
+            else
+            {
+                tasks = await _taskService.GetAsync();
+                if (tasks.Count() > 0)
+                {
+                    return Ok(tasks);
+                }
+                return NoContent();
+            }
         }
 
         //Get Specific Task
@@ -56,12 +73,15 @@ namespace TaskManagementSystem_WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (await _taskService.GetAsync(id) != null)
+                var task = await _taskService.GetAsync(id);
+                if (task != null)
                 {
                     var res = await _taskService.UpdateAsync(id, taskDto);
                     if (res)
                     {
-                        return Ok(_taskService.GetAsync().Result.LastOrDefault());
+                        task.Title = taskDto.Title;
+                        task.Description = taskDto.Description;
+                        return Ok(task);
                     }
                     return BadRequest("Failed to update task!");
                 }

@@ -37,6 +37,12 @@ namespace Business_Logic_Layer.Services
             return _mapper.Map<TaskDto>(await _taskRepository.GetAsync(query));
         }
 
+        public async Task<IEnumerable<TaskDto>> GetAsync(string keyword)
+        {
+            string query = $"SELECT * FROM Tasks WHERE description LIKE '%{keyword}%'";
+            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+        }
+
         public async Task<bool> InsertAsync(TaskDto taskDto)
         {
             taskDto.CreatedAt = DateTime.Now;
@@ -57,5 +63,6 @@ namespace Business_Logic_Layer.Services
             }
             return false;
         }
+
     }
 }
