@@ -46,13 +46,14 @@ namespace Business_Logic_Layer.Services
 
         public async Task<bool> UpdateAsync(int id, TaskDto taskDto)
         {
-            var task = await GetAsync(id);
+            string query = $"SELECT * FROM Tasks WHERE id={id};";
+            var task = await _taskRepository.GetAsync(query);
             if (task != null)
             {
                 task.Title = taskDto.Title;
                 task.Description = taskDto.Description;
                 task.UpdatedAt = DateTime.Now;
-                return await _taskRepository.UpdateAsync(_mapper.Map<Tasks>(task));
+                return await _taskRepository.UpdateAsync(task);
             }
             return false;
         }

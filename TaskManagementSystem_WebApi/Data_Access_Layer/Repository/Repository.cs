@@ -40,7 +40,8 @@ namespace Data_Access_Layer.Repository
         {
             try
             {
-                _context.Set<TEntity>().Update(entity);
+                //_context.Set<TEntity>().Update(entity);
+                _context.Entry<TEntity>(entity).State = EntityState.Modified;
                 var res = await _context.SaveChangesAsync();
                 if (res != 0) return true; else return false;
             }
