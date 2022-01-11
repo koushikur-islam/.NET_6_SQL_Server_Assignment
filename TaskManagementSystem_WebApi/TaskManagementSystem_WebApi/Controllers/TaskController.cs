@@ -19,7 +19,7 @@ namespace TaskManagementSystem_WebApi.Controllers
         public async Task<IActionResult> Get()
         {
             var taskList = await _taskService.GetAsync();
-            if (taskList.Count > 0)
+            if (taskList.Count() > 0)
             {
                 return Ok(taskList);
             }
@@ -80,9 +80,10 @@ namespace TaskManagementSystem_WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            if (await _taskService.GetAsync(id)!=null)
+            var taskDto = await _taskService.GetAsync(id);
+            if (taskDto != null)
             {
-                var res = await _taskService.DeleteAsync(id);
+                var res = await _taskService.DeleteAsync(taskDto);
                 if (res)
                 {
                     return NoContent();

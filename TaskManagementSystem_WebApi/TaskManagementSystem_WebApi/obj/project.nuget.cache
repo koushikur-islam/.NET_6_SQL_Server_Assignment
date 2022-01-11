@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OKAc7DkkNBvIoe82uPKmF1Ll5FJ54PHC/xtO++4SRUd+fDQ2MRVOvC89TgYe+6HSlDl/BmVGJdcQz5C8BrfVLg==",
+  "dgSpecHash": "VfBEswhoxlAnTWD4TM+w+wW8agilzwkAgEjFdIaS8Vy1bDsWnE6o5jHWZQ6z8rM63iEGv1kPoOW21iMh+KMN/g==",
   "success": true,
   "projectFilePath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi\\TaskManagementSystem_WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",

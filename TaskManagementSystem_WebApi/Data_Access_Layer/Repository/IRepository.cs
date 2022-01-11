@@ -8,10 +8,10 @@ namespace Data_Access_Layer.Repository
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        Task<List<TEntity>> GetAsync();
-        Task<TEntity?> GetAsync(int id);
+        Task<IEnumerable<TEntity>> GetAllAsync(string query);
+        Task<TEntity?> GetAsync(string query);
         Task<bool> InsertAsync(TEntity entity);
         Task<bool> UpdateAsync(TEntity entity);
-        Task<bool> DeleteAsync(int id);
+        Task<bool> DeleteAsync(TEntity entity);
     }
 }

@@ -21,7 +21,7 @@ namespace TaskManagementSystem_WebApi.Controllers
         public async Task<IActionResult> Get()
         {
             var result = await _personService.GetAsync();
-            if (result.Count > 0)
+            if (result.Count() > 0)
             {
                 return Ok(result);
             }
@@ -98,9 +98,10 @@ namespace TaskManagementSystem_WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            if (await _personService.GetAsync(id)!=null)
+            var personDto = await _personService.GetAsync(id);
+            if (personDto != null)
             {
-                var res = await _personService.DeleteAsync(id);
+                var res = await _personService.DeleteAsync(personDto);
                 if (res)
                 {
                     return NoContent();

@@ -20,19 +20,21 @@ namespace Business_Logic_Layer.Services
             _mapper = mapper;
             _taskRepository = new TaskRepository(configuration);
         }
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(TaskDto taskDto)
         {
-            return await _taskRepository.DeleteAsync(id);
+            return await _taskRepository.DeleteAsync(_mapper.Map<Tasks>(taskDto));
         }
 
-        public async Task<List<TaskDto>> GetAsync()
+        public async Task<IEnumerable<TaskDto>> GetAsync()
         {
-            return _mapper.Map<List<TaskDto>>(await _taskRepository.GetAsync());
+            string query = "SELECT * FROM Tasks;";
+            return _mapper.Map<List<TaskDto>>(await _taskRepository.GetAllAsync(query));
         }
 
         public async Task<TaskDto> GetAsync(int id)
         {
-            return _mapper.Map<TaskDto>(await _taskRepository.GetAsync(id));
+            string query = $"SELECT * FROM Tasks WHERE id={id};";
+            return _mapper.Map<TaskDto>(await _taskRepository.GetAsync(query));
         }
 
         public async Task<bool> InsertAsync(TaskDto taskDto)
@@ -44,13 +46,13 @@ namespace Business_Logic_Layer.Services
 
         public async Task<bool> UpdateAsync(int id, TaskDto taskDto)
         {
-            var task = await _taskRepository.GetAsync(id);
+            var task = await GetAsync(id);
             if (task != null)
             {
                 task.Title = taskDto.Title;
                 task.Description = taskDto.Description;
                 task.UpdatedAt = DateTime.Now;
-                return await _taskRepository.UpdateAsync(task);
+                return await _taskRepository.UpdateAsync(_mapper.Map<Tasks>(task));
             }
             return false;
         }

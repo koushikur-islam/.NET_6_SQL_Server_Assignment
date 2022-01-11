@@ -1,4 +1,6 @@
-﻿using Data_Access_Layer.Models;
+﻿using Dapper;
+using Data_Access_Layer.Models;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -12,15 +14,8 @@ namespace Data_Access_Layer.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        //private readonly IOptions<ConnectionStrings> _connectionStrings;
-        //private readonly TaskManagementSystemDbContext _context;
-        //public Repository(IOptions<ConnectionStrings> connectionStrings)
-        //{
-        //    _connectionStrings  = connectionStrings;
-        //    _context = new TaskManagementSystemDbContext(_connectionStrings);
-        //}
-        private readonly IConfiguration _configuration;
         private readonly TaskManagementSystemDBContext _context;
+        private readonly IConfiguration _configuration; 
         public Repository(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -55,14 +50,13 @@ namespace Data_Access_Layer.Repository
             }
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(TEntity entity)
         {
             try
             {
-                var item = await GetAsync(id);
-                if (item != null)
+                if (entity != null)
                 {
-                    _context.Set<TEntity>().Remove(item);
+                    _context.Set<TEntity>().Remove(entity);
                     var res = await _context.SaveChangesAsync();
                     if (res != 0) return true; else return false;
 
@@ -75,28 +69,50 @@ namespace Data_Access_Layer.Repository
             }
         }
 
-        public async Task<TEntity?> GetAsync(int id)
-        {
-            try
-            {
-                return await _context.Set<TEntity>().FindAsync(id);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message, ex);
-            }
-        }
+        //public async Task<TEntity?> GetAsync(int id)
+        //{
+        //    try
+        //    {
+        //        return await _context.Set<TEntity>().FindAsync(id);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message, ex);
+        //    }
+        //}
 
-        public async Task<List<TEntity>> GetAsync()
+        //public async Task<List<TEntity>> GetAsync()
+        //{
+        //    try
+        //    {
+        //        return await _context.Set<TEntity>().ToListAsync();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message, ex);
+        //    }
+        //}
+        public async Task<IEnumerable<TEntity>> GetAllAsync(string query)
         {
-            try
+            IEnumerable<TEntity> data;
+            using (var con =  new SqlConnection(_configuration.GetConnectionString("DefaultConnectionString")))
             {
-                return await _context.Set<TEntity>().ToListAsync();
+                con.Open();
+                data = await con.QueryAsync<TEntity>(query);
+                con.Close();
             }
-            catch (Exception ex)
+            return data;
+        }
+        public async Task<TEntity?> GetAsync(string query)
+        {
+            TEntity data;
+            using (var con = new SqlConnection(_configuration.GetConnectionString("DefaultConnectionString")))
             {
-                throw new Exception(ex.Message, ex);
+                con.Open();
+                data = await con.QueryFirstOrDefaultAsync<TEntity>(query);
+                con.Close();
             }
+            return data;
         }
     }
 }

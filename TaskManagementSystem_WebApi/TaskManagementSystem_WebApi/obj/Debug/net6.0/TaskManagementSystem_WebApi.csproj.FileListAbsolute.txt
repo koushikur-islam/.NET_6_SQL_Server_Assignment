@@ -61,3 +61,4 @@ D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSyst
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\ref\TaskManagementSystem_WebApi.dll
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.pdb
 D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\obj\Debug\net6.0\TaskManagementSystem_WebApi.genruntimeconfig.cache
+D:\Programs\Astha IT\Assignments\.NET_6_SQL_Server_Assignment\TaskManagementSystem_WebApi\TaskManagementSystem_WebApi\bin\Debug\net6.0\Dapper.dll
