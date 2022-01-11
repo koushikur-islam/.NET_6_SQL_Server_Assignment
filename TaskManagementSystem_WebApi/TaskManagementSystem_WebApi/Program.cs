@@ -8,8 +8,6 @@ builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSingleton<IPersonService, PersonService>();
 
-//builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

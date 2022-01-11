@@ -9,5 +9,7 @@ namespace Business_Entity_Layer.DTO
     public class ExceptionLogDto
     {
         public int Id { get; set; }
+        public string ExceptionMessage { get; set; } = null!;
+        public DateTime LoggedAt { get; set; }
     }
 }

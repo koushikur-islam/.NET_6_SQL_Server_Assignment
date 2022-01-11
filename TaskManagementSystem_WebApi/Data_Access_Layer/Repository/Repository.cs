@@ -20,11 +20,11 @@ namespace Data_Access_Layer.Repository
         //    _context = new TaskManagementSystemDbContext(_connectionStrings);
         //}
         private readonly IConfiguration _configuration;
-        private readonly TaskManagementSystemDbContext _context;
+        private readonly TaskManagementSystemDBContext _context;
         public Repository(IConfiguration configuration)
         {
             _configuration = configuration;
-            _context = new TaskManagementSystemDbContext(configuration);
+            _context = new TaskManagementSystemDBContext(configuration);
         }
 
         public async Task<bool> InsertAsync(TEntity entity)

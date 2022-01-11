@@ -13,7 +13,5 @@ namespace Business_Entity_Layer.DTO
         public string Description { get; set; } = null!;
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        public int AssignedBy { get; set; }
-        public int AssignedTo { get; set; }
     }
 }

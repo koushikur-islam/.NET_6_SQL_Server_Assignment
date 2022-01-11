@@ -9,9 +9,8 @@ namespace Business_Entity_Layer.DTO
     public class RequestLogDto
     {
         public int Id { get; set; }
-        public int Status { get; set; }
-        public DateTime DueAt { get; set; }
+        public string Route { get; set; } = null!;
+        public DateTime RequestedAt { get; set; }
         public DateTime? CompletedAt { get; set; }
-        public int TaskId { get; set; }
     }
 }

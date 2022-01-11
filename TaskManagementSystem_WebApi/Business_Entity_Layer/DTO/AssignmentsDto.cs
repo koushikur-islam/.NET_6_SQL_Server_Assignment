@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Business_Entity_Layer.DTO
 {
-    public class PersonDto
+    public class AssignmentsDto
     {
-
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
+        public int Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public int AssignedBy { get; set; }
+        public int AssignedTo { get; set; }
     }
 }
