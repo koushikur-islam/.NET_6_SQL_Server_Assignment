@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddSingleton<IPersonService, PersonService>();
+builder.Services.AddSingleton<ITaskService, TaskService>();
 
 var app = builder.Build();
 
