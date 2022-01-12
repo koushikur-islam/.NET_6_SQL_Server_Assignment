@@ -55,7 +55,12 @@ namespace TaskManagementSystem_WebApi.Controllers
                 var res = await _personService.InsertAsync(personDto);
                 if (res)
                 {
-                    return Ok(_personService.GetAsync().Result.LastOrDefault());
+                    var person = _personService.GetAsync().Result.LastOrDefault();
+                    if (person == null)
+                    {
+                        return BadRequest("Failed to created new peron!");
+                    }
+                    return Created("api/[controller]/"+person.Id,person);
                 }
                 else
                 {

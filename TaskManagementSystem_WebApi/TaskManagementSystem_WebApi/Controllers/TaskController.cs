@@ -62,7 +62,12 @@ namespace TaskManagementSystem_WebApi.Controllers
             var res = await _taskService.InsertAsync(taskDto);
             if (res)
             {
-                return Ok(_taskService.GetAsync().Result.LastOrDefault());
+                var task = _taskService.GetAsync().Result.LastOrDefault();
+                if (task != null)
+                {
+                    return Created("api/[controller]/" + task.Id, task);
+                }
+                return BadRequest();
             }
             return BadRequest("Failed to insert new task!");
         }
