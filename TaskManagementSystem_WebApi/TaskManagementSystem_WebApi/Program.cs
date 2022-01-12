@@ -10,11 +10,14 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IPersonService, PersonService>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddTransient<IRequestLogService, RequestLogService>();
+builder.Services.AddTransient<IExceptionLogService, ExceptionLogService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.RegisterMiddlewares();
+
+app.UseExceptionHandler("/error");
 
 app.UseAuthorization();
 

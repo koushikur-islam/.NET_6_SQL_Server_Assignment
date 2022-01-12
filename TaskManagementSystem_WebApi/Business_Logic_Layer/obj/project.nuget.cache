@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Ynuz7Xp1ziGOTw82REfiABJ94Wo2XuYga/bosnlXLHMMiHWMHq9zox41BbqzDhU0A7Z1tmq4zjxpRl89WuqLFQ==",
+  "dgSpecHash": "ZDGibXAasX+lAIEHgLvhJ7dwvxLneOsaSZnZy1Xbj5f6yNjRNQAkW2KQF65RXsWlE2uE4URAIqZmKbSq6dtKFw==",
   "success": true,
   "projectFilePath": "D:\\Programs\\Astha IT\\Assignments\\.NET_6_SQL_Server_Assignment\\TaskManagementSystem_WebApi\\Business_Logic_Layer\\Business_Logic_Layer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.abstractions\\2.2.0\\microsoft.aspnetcore.diagnostics.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
