@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Data_Access_Layer.Models
 {
+    //Inherits EF Core DbContext class for necessary context configurations.
     public partial class TaskManagementSystemDBContext : DbContext
     {
         private readonly IConfiguration _configuration;
@@ -24,11 +25,15 @@ namespace Data_Access_Layer.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
+                //From dependency injection gets the connection string from appsettings.json file.
+                //In this case only one connection string is registered in the json file named DefaultConnectionString.
                 optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnectionString"));
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //On creation of models seeding some data to the database
+
             modelBuilder.Entity<Persons>().HasData(
                 new Persons
                 {

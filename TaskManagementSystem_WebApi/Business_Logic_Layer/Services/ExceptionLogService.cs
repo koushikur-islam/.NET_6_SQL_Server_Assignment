@@ -15,12 +15,16 @@ namespace Business_Logic_Layer.Services
     {
         private readonly IMapper _mapper;
         private readonly ExceptionLogRepository _exceptionLogRepository;
+
+        //Registering necessary services with dependency injection
         public ExceptionLogService(IMapper mapper, IConfiguration configuration)
         {
             _mapper = mapper;
             _exceptionLogRepository = new ExceptionLogRepository(configuration);
 
         }
+
+        //Inserts any exception caught from the route along with the message to DB.
         public async Task InsertAsync(string route,string message)
         {
             var newException = new ExceptionLogDto();

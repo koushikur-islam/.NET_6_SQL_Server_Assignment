@@ -17,51 +17,61 @@ namespace Business_Logic_Layer.Services
         private readonly IMapper _mapper;
         private readonly TaskRepository _taskRepository;
         private readonly ITaskAssignmentService _taskAssignmentService;
+
+        //Registerring necessary services with dependency injection
         public TaskService(IConfiguration configuration,IMapper mapper, ITaskAssignmentService taskAssignmentService)
         {
             _mapper = mapper;
             _taskRepository = new TaskRepository(configuration);
             _taskAssignmentService = taskAssignmentService;
         }
-        public async Task<bool> DeleteAsync(TaskDto taskDto)
-        {
-            var res =  await _taskRepository.DeleteAsync(_mapper.Map<Tasks>(taskDto));
-            if (res)
-            {
-                var taskAssignmentLog = await _taskAssignmentService.GetByTaskId(taskDto.Id);
-                if (taskAssignmentLog != null)
-                {
-                    await _taskAssignmentService.DeleteAsync(taskAssignmentLog);
-                }
-                return true;
-            }
-            return false;
-        }
 
+
+        //Gets all the tasks from DB using Dapper from repository and returns the mapped dto collections using AutoMapper.
         public async Task<IEnumerable<TaskDto>> GetAsync()
         {
             string query = "SELECT * FROM Tasks;";
             return _mapper.Map<List<TaskDto>>(await _taskRepository.GetAllAsync(query));
         }
 
+        //Gets a specific task by its ID using Dapper from repository and returns the mapped dto using AutoMapper
         public async Task<TaskDto> GetAsync(int id)
         {
             string query = $"SELECT * FROM Tasks WHERE id={id};";
             return _mapper.Map<TaskDto>(await _taskRepository.GetAsync(query));
         }
 
+        //Gets all the tasks whose description matches with the given keyword using Dapper and returns the collection of mapped Dtos.
         public async Task<IEnumerable<TaskDto>> GetAsync(string keyword)
         {
             string query = $"SELECT * FROM Tasks WHERE description LIKE '%{keyword}%'";
             return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
         }
 
+        //Gets all the tasks from DB using Dapper those are assigned to a specific person and returns it.
         public async Task<IEnumerable<TaskDto>> GetAssignedTasksByPersonAsync(int id)
         {
             string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedToId = {id});";
             return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
         }
 
+        //Returns all the tasks that are completed by a specific person
+        public async Task<IEnumerable<TaskDto>> GetCompletedTaskByPersonAsync(int id)
+        {
+            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedToId = {id} AND Status='Completed');";
+            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+        }
+
+        //Returns all the tasks that are requested by a specific person
+        public async Task<IEnumerable<TaskDto>> GetRequestedTasksByPersonAsync(int id)
+        {
+            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedById = {id});";
+            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+        }
+
+        //Inserts a task and then logs the details to the task assignment log with the task id and assignedby and assigned to person data.
+        //If fails to assign task assignment details then deletes the taks as well.
+        //Finally sends appropriate acknowledgement.
         public async Task<bool> InsertAsync(TaskAssignmentModel taskAssignmentModel)
         {
             var taskDto = new TaskDto();
@@ -101,6 +111,7 @@ namespace Business_Logic_Layer.Services
             return false;
         }
 
+        //Updates a task if it is found and sends right acknowledgement
         public async Task<bool> UpdateAsync(int id, TaskDto taskDto)
         {
             string query = $"SELECT * FROM Tasks WHERE id={id};";
@@ -115,16 +126,21 @@ namespace Business_Logic_Layer.Services
             return false;
         }
 
-        public async Task<IEnumerable<TaskDto>> GetCompletedTaskByPersonAsync(int id)
+        //Deletes any task if it is found with EF Core and returns appropirate acknowledgement of deletion
+        public async Task<bool> DeleteAsync(TaskDto taskDto)
         {
-            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedToId = {id} AND Status='Completed');";
-            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+            var res = await _taskRepository.DeleteAsync(_mapper.Map<Tasks>(taskDto));
+            if (res)
+            {
+                var taskAssignmentLog = await _taskAssignmentService.GetByTaskId(taskDto.Id);
+                if (taskAssignmentLog != null)
+                {
+                    await _taskAssignmentService.DeleteAsync(taskAssignmentLog);
+                }
+                return true;
+            }
+            return false;
         }
 
-        public async Task<IEnumerable<TaskDto>> GetRequestedTasksByPersonAsync(int id)
-        {
-            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedById = {id});";
-            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
-        }
     }
 }

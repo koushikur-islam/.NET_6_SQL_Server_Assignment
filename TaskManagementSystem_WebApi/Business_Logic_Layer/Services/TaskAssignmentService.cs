@@ -15,37 +15,47 @@ namespace Business_Logic_Layer.Services
     {
         private readonly IMapper _mapper;
         private readonly TaskAssignmentLogRepository _taskAssignmentLogRepository;
+
+        //Registering necessary services with dependency injection
         public TaskAssignmentService(IMapper mapper, IConfiguration configuration)
         {
             _mapper = mapper;
             _taskAssignmentLogRepository = new TaskAssignmentLogRepository(configuration);
         }
 
-        public async Task<bool> DeleteAsync(TaskAssignmentLogDto taskAssignmentLogDto)
-        {
-            return await _taskAssignmentLogRepository.DeleteAsync(_mapper.Map<TaskAssignmentsLogs>(taskAssignmentLogDto));
-        }
 
+        //Returns all the assignment objects from the task assignment log table.
         public async Task<IEnumerable<TaskAssignmentLogDto>> GetAllAsync()
         {
             string query = "SELECT * FROM TaskAssignmentsLogs;";
             return _mapper.Map<IEnumerable<TaskAssignmentLogDto>>(await _taskAssignmentLogRepository.GetAllAsync(query));
         }
 
+        //Takes ID of a task and returns a signle assignment log record of that task.
         public async Task<TaskAssignmentLogDto> GetByTaskId(int id)
         {
             string query = $"SELECT * FROM TaskAssignmentsLogs WHERE TaskId={id};";
             return _mapper.Map<TaskAssignmentLogDto>(await _taskAssignmentLogRepository.GetAsync(query));
         }
 
+        //Inserts a record to the task assignment table when inserting a new task.
         public async Task<bool> InsertAsync(TaskAssignmentLogDto taskAssignmentDto)
         {
             return await _taskAssignmentLogRepository.InsertAsync(_mapper.Map<TaskAssignmentsLogs>(taskAssignmentDto));  
         }
 
+        //Updates a record to the task assignment table when necessary.
+        //Mainly used for setting status to "Complete" or "Pending" for any task.
         public Task UpdateAsync(int id, TaskAssignmentLogDto taskAssignmentDto)
         {
             throw new NotImplementedException();
+        }
+
+        //Takes a task assignment object as parameter and deletes it.
+        //Returns boolean acknowledgement.
+        public async Task<bool> DeleteAsync(TaskAssignmentLogDto taskAssignmentLogDto)
+        {
+            return await _taskAssignmentLogRepository.DeleteAsync(_mapper.Map<TaskAssignmentsLogs>(taskAssignmentLogDto));
         }
     }
 }

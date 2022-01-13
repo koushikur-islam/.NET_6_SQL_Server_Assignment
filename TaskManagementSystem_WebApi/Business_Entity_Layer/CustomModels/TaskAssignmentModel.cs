@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Business_Entity_Layer.CustomModels
 {
+    //Custom model for inserting two models with one model
+    //Task and Task Assignment Log are inserted with these necessary data.
+    //Used data annotations for validation
     public class TaskAssignmentModel
     {
         [Required]

@@ -13,12 +13,16 @@ namespace Business_Logic_Layer.Middlewares
     {
         private readonly RequestDelegate _next;
         private readonly IRequestLogService _requestLogService;
+
+        //Registering necessary services for middleware and db operations
         public RequestArrivalMiddleware(RequestDelegate next, IRequestLogService requestLogService)
         {
             _next = next;
             _requestLogService = requestLogService;
         }
 
+        //Records a new row to request log with the requested route and its datetime before executing the controller operations.
+        //Also invokes the next operation using delegate.
         public async Task Invoke(HttpContext context)
         {
             Console.WriteLine("Request Arrival : "+context.Request.Path.ToUriComponent() +"  -----> "+DateTime.Now);

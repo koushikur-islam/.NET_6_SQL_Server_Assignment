@@ -8,6 +8,7 @@ namespace Business_Entity_Layer.DTO
 {
     public class RequestLogDto
     {
+        //Request Log DTO for transerferring between db entities and presentation layer
         public int Id { get; set; }
         public string Route { get; set; } = null!;
         public DateTime RequestedAt { get; set; }

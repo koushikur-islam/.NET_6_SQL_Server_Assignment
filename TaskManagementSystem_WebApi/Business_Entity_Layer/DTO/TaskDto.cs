@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business_Entity_Layer.DTO
 {
+    //Task DTO for transerferring between db entities and presentation layer
     public class TaskDto
     {
         public int Id { get; set; }

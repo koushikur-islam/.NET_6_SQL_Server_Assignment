@@ -14,11 +14,15 @@ namespace Business_Logic_Layer.Middlewares
     {
         private readonly RequestDelegate _next;
         private readonly IRequestLogService _requestLogService;
+
+        //Registering necessary services with dependency injection.
         public RequestExitMiddleware(RequestDelegate next, IRequestLogService requestLogService)
         {
             _next = next;
             _requestLogService = requestLogService;
         }
+
+        //First executing requested controller instructions and then before leaving the request updates the request log with completion date time.
         public async Task Invoke(HttpContext context)
         {
             await _next.Invoke(context);

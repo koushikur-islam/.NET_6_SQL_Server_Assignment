@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business_Entity_Layer.DTO
 {
+    //Task Assignment Log DTO for transerferring between db entities and presentation layer
     public class TaskAssignmentLogDto
     {
         public int Id { get; set; }

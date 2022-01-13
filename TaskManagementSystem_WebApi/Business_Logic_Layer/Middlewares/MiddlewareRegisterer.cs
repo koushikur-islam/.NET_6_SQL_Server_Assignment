@@ -9,6 +9,7 @@ namespace Business_Logic_Layer.Middlewares
 {
     public static class MiddlewareRegisterer
     {
+        //Registering all the necessary middleware to the middleware registerer and returns the application builder.
         public static IApplicationBuilder RegisterMiddlewares(this IApplicationBuilder builder)
         {
             builder.UseMiddleware<RequestArrivalMiddleware>();

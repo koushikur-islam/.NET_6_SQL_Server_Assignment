@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Repository
 {
+    //Interface configurations for generic repository implementation.
+    //A repository class will implement these necessary methods for generic behaviour.
     public interface IRepository<TEntity> where TEntity : class
     {
         Task<IEnumerable<TEntity>> GetAllAsync(string query);

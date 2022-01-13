@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data_Access_Layer.Models
 {
+    //Used ForeignKey annotations for relationships.
     public class TaskAssignmentsLogs
     {
         [Key]

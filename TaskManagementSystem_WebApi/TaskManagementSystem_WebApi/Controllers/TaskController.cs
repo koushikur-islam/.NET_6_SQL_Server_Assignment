@@ -11,13 +11,12 @@ namespace TaskManagementSystem_WebApi.Controllers
     public class TaskController : ControllerBase
     {
         private readonly ITaskService _taskService;
-        private readonly IPersonService _personService;
-        public TaskController(ITaskService taskService, IPersonService personService)
+        public TaskController(ITaskService taskService)
         {
             _taskService = taskService;
-            _personService = personService;
         }
         //Get all the tasks in the systen
+        //Keyword in the query parameter is optional but if given then returns all the tasks that matches the keyword in their description.
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] string? keyword)
         {
@@ -46,7 +45,7 @@ namespace TaskManagementSystem_WebApi.Controllers
             }
         }
 
-        //Get Specific Task
+        //Get a specific Task by ID
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -108,7 +107,7 @@ namespace TaskManagementSystem_WebApi.Controllers
             }
         }
 
-        //Delete a task by id
+        //Delete a task by ID
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

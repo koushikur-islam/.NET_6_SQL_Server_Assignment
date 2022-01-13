@@ -11,6 +11,8 @@ namespace Business_Logic_Layer.Helpers
 {
     public class AutoMapperSettings:Profile
     {
+        //Configurations for entity models and dtos using AutoMapper.
+        //Reverse mapping allowed between dto's and entities.
         public AutoMapperSettings()
         {
             CreateMap<Persons, PersonDto>().ReverseMap();
