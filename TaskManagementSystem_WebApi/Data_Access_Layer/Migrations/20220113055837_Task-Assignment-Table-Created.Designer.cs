@@ -4,6 +4,7 @@ using Data_Access_Layer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data_Access_Layer.Migrations
 {
     [DbContext(typeof(TaskManagementSystemDBContext))]
-    partial class TaskManagementSystemDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220113055837_Task-Assignment-Table-Created")]
+    partial class TaskAssignmentTableCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,21 +54,21 @@ namespace Data_Access_Layer.Migrations
                         {
                             Id = 1,
                             ExceptionMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.,",
-                            LoggedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3242),
+                            LoggedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1897),
                             Route = "api/person"
                         },
                         new
                         {
                             Id = 2,
                             ExceptionMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.,",
-                            LoggedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3244),
+                            LoggedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1898),
                             Route = "api/task/"
                         },
                         new
                         {
                             Id = 3,
                             ExceptionMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.,",
-                            LoggedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3244),
+                            LoggedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1899),
                             Route = "api/person"
                         });
                 });
@@ -98,23 +100,23 @@ namespace Data_Access_Layer.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3102),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1707),
                             Name = "Koushikur Islam Shohag",
-                            UpdatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3111)
+                            UpdatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1718)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3115),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1722),
                             Name = "Asef Hossain Khan",
-                            UpdatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3115)
+                            UpdatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1722)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3116),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1723),
                             Name = "Shameem Shahriar Shan",
-                            UpdatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3116)
+                            UpdatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1724)
                         });
                 });
 
@@ -145,22 +147,22 @@ namespace Data_Access_Layer.Migrations
                         new
                         {
                             Id = 1,
-                            CompletedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3225),
-                            RequestedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3223),
+                            CompletedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1881),
+                            RequestedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1880),
                             Route = "api/person/"
                         },
                         new
                         {
                             Id = 2,
-                            CompletedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3227),
-                            RequestedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3226),
+                            CompletedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1883),
+                            RequestedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1882),
                             Route = "api/person/1"
                         },
                         new
                         {
                             Id = 3,
-                            CompletedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3228),
-                            RequestedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3228),
+                            CompletedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1884),
+                            RequestedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1883),
                             Route = "api/task/"
                         });
                 });
@@ -210,8 +212,8 @@ namespace Data_Access_Layer.Migrations
                             Id = 1,
                             AssignedById = 1,
                             AssignedToId = 2,
-                            CompletedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3257),
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3256),
+                            CompletedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1910),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1909),
                             Status = "Pending",
                             TaskId = 1
                         },
@@ -220,8 +222,8 @@ namespace Data_Access_Layer.Migrations
                             Id = 2,
                             AssignedById = 3,
                             AssignedToId = 2,
-                            CompletedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3259),
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3258),
+                            CompletedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1912),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1911),
                             Status = "Pending",
                             TaskId = 2
                         },
@@ -230,8 +232,8 @@ namespace Data_Access_Layer.Migrations
                             Id = 3,
                             AssignedById = 1,
                             AssignedToId = 3,
-                            CompletedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3260),
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3260),
+                            CompletedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1913),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1913),
                             Status = "Completed",
                             TaskId = 3
                         });
@@ -253,9 +255,6 @@ namespace Data_Access_Layer.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<DateTime?>("TaskDeadline")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -272,29 +271,26 @@ namespace Data_Access_Layer.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3207),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1863),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            TaskDeadline = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3208),
                             Title = "Bring BreakFast",
-                            UpdatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3207)
+                            UpdatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1864)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3209),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1865),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            TaskDeadline = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3210),
                             Title = "Bring Lunch",
-                            UpdatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3210)
+                            UpdatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1866)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3211),
+                            CreatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1867),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            TaskDeadline = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3212),
                             Title = "Bring Dinner",
-                            UpdatedAt = new DateTime(2022, 1, 13, 15, 3, 29, 35, DateTimeKind.Local).AddTicks(3211)
+                            UpdatedAt = new DateTime(2022, 1, 13, 11, 58, 36, 918, DateTimeKind.Local).AddTicks(1867)
                         });
                 });
 

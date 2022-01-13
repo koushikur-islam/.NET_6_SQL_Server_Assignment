@@ -25,10 +25,10 @@ namespace Business_Logic_Layer.Services
             return await _personRepository.DeleteAsync(_mapper.Map<Persons>(personDto));
         }
 
-        public async Task<List<PersonDto>> GetAsync()
+        public async Task<IEnumerable<PersonDto>> GetAsync()
         {
             string query = "SELECT * FROM Persons;";
-            return _mapper.Map<List<PersonDto>>(await _personRepository.GetAllAsync(query));
+            return _mapper.Map<IEnumerable<PersonDto>>(await _personRepository.GetAllAsync(query));
         }
 
         public async Task<PersonDto> GetAsync(int id)
@@ -36,6 +36,7 @@ namespace Business_Logic_Layer.Services
             string query = $"SELECT * FROM Persons WHERE id = {id};";
             return _mapper.Map<PersonDto>(await _personRepository.GetAsync(query));
         }
+
 
         public async Task<bool> InsertAsync(PersonDto personDto)
         {

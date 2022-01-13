@@ -9,7 +9,7 @@ namespace Business_Logic_Layer.Services
 {
     public interface IPersonService
     {
-        public Task<List<PersonDto>> GetAsync();
+        public Task<IEnumerable<PersonDto>> GetAsync();
         public Task<PersonDto> GetAsync(int id);
         public Task<bool> InsertAsync(PersonDto personDto);
         public Task<bool> UpdateAsync(int id, PersonDto personDto);

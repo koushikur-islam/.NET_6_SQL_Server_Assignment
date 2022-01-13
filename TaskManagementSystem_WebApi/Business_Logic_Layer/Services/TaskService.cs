@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Business_Entity_Layer.CustomModels;
 using Business_Entity_Layer.DTO;
 using Data_Access_Layer.Models;
 using Data_Access_Layer.Repository;
@@ -15,14 +16,26 @@ namespace Business_Logic_Layer.Services
     {
         private readonly IMapper _mapper;
         private readonly TaskRepository _taskRepository;
-        public TaskService(IConfiguration configuration,IMapper mapper)
+        private readonly ITaskAssignmentService _taskAssignmentService;
+        public TaskService(IConfiguration configuration,IMapper mapper, ITaskAssignmentService taskAssignmentService)
         {
             _mapper = mapper;
             _taskRepository = new TaskRepository(configuration);
+            _taskAssignmentService = taskAssignmentService;
         }
         public async Task<bool> DeleteAsync(TaskDto taskDto)
         {
-            return await _taskRepository.DeleteAsync(_mapper.Map<Tasks>(taskDto));
+            var res =  await _taskRepository.DeleteAsync(_mapper.Map<Tasks>(taskDto));
+            if (res)
+            {
+                var taskAssignmentLog = await _taskAssignmentService.GetByTaskId(taskDto.Id);
+                if (taskAssignmentLog != null)
+                {
+                    await _taskAssignmentService.DeleteAsync(taskAssignmentLog);
+                }
+                return true;
+            }
+            return false;
         }
 
         public async Task<IEnumerable<TaskDto>> GetAsync()
@@ -43,11 +56,49 @@ namespace Business_Logic_Layer.Services
             return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
         }
 
-        public async Task<bool> InsertAsync(TaskDto taskDto)
+        public async Task<IEnumerable<TaskDto>> GetAssignedTasksByPersonAsync(int id)
         {
+            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedToId = {id});";
+            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+        }
+
+        public async Task<bool> InsertAsync(TaskAssignmentModel taskAssignmentModel)
+        {
+            var taskDto = new TaskDto();
+            taskDto.Title = taskAssignmentModel.Title;
+            taskDto.Description = taskAssignmentModel.Description;
             taskDto.CreatedAt = DateTime.Now;
             taskDto.UpdatedAt = DateTime.Now;
-            return await _taskRepository.InsertAsync(_mapper.Map<Tasks>(taskDto));
+            taskDto.TaskDeadline = taskAssignmentModel.TaskDeadline;
+            var res =  await _taskRepository.InsertAsync(_mapper.Map<Tasks>(taskDto));
+            if (res)
+            {
+                var assignedTask = (await GetAsync()).LastOrDefault();
+                if (assignedTask!=null)
+                {
+                    TaskAssignmentLogDto taskLogDto = new TaskAssignmentLogDto();
+                    taskLogDto.TaskId = assignedTask.Id;
+                    taskLogDto.Status = "Pending";
+                    taskLogDto.CreatedAt = DateTime.Now;
+                    taskLogDto.AssignedById = taskAssignmentModel.AssignedById;
+                    taskLogDto.AssignedToId = taskAssignmentModel.AssignedToId;
+                    var result = await _taskAssignmentService.InsertAsync(taskLogDto);
+                    if (result)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        await DeleteAsync(assignedTask);
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return false;
         }
 
         public async Task<bool> UpdateAsync(int id, TaskDto taskDto)
@@ -64,5 +115,16 @@ namespace Business_Logic_Layer.Services
             return false;
         }
 
+        public async Task<IEnumerable<TaskDto>> GetCompletedTaskByPersonAsync(int id)
+        {
+            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedToId = {id} AND Status='Completed');";
+            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetRequestedTasksByPersonAsync(int id)
+        {
+            string query = $"SELECT * FROM Tasks WHERE Id IN (SELECT Id FROM TaskAssignmentsLogs WHERE AssignedById = {id});";
+            return _mapper.Map<IEnumerable<TaskDto>>(await _taskRepository.GetAllAsync(query));
+        }
     }
 }

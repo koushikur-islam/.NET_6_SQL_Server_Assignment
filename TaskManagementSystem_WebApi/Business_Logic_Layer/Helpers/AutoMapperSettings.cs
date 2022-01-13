@@ -17,6 +17,7 @@ namespace Business_Logic_Layer.Helpers
             CreateMap<Tasks, TaskDto>().ReverseMap();
             CreateMap<RequestLogs, RequestLogDto>().ReverseMap();
             CreateMap<ExceptionLogs, ExceptionLogDto>().ReverseMap();
+            CreateMap<TaskAssignmentsLogs, TaskAssignmentLogDto>().ReverseMap();
         }
     }
 }

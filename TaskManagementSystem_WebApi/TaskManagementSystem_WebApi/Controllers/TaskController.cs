@@ -1,4 +1,5 @@
-﻿using Business_Entity_Layer.DTO;
+﻿using Business_Entity_Layer.CustomModels;
+using Business_Entity_Layer.DTO;
 using Business_Logic_Layer.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +11,11 @@ namespace TaskManagementSystem_WebApi.Controllers
     public class TaskController : ControllerBase
     {
         private readonly ITaskService _taskService;
-        public TaskController(ITaskService taskService)
+        private readonly IPersonService _personService;
+        public TaskController(ITaskService taskService, IPersonService personService)
         {
             _taskService = taskService;
+            _personService = personService;
         }
         //Get all the tasks in the systen
         [HttpGet]
@@ -57,19 +60,23 @@ namespace TaskManagementSystem_WebApi.Controllers
 
         //Insert a new task
         [HttpPost]
-        public async Task<IActionResult> Insert(TaskDto taskDto)
+        public async Task<IActionResult> Insert(TaskAssignmentModel taskAssignmentModel)
         {
-            var res = await _taskService.InsertAsync(taskDto);
-            if (res)
+            if (ModelState.IsValid)
             {
-                var task = _taskService.GetAsync().Result.LastOrDefault();
-                if (task != null)
+                var res = await _taskService.InsertAsync(taskAssignmentModel);
+                if (res)
                 {
-                    return Created("api/[controller]/" + task.Id, task);
+                    var task = _taskService.GetAsync().Result.LastOrDefault();
+                    if (task != null)
+                    {
+                        return Created("api/[controller]/" + task.Id, task);
+                    }
+                    return BadRequest();
                 }
-                return BadRequest();
+                return BadRequest("Failed to insert new task!");
             }
-            return BadRequest("Failed to insert new task!");
+            return BadRequest("Invalid Model!");
         }
 
         //Update a new task

@@ -18,6 +18,7 @@ namespace Data_Access_Layer.Models
         public virtual DbSet<Persons> Persons { get; set; } = null!;
         public virtual DbSet<RequestLogs> RequestLogs { get; set; } = null!;
         public virtual DbSet<Tasks> Tasks { get; set; } = null!;
+        public virtual DbSet<TaskAssignmentsLogs> TaskAssignmentsLogs { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -41,7 +42,7 @@ namespace Data_Access_Layer.Models
                     Id = 2,
                     Name = "Asef Hossain Khan",
                     CreatedAt = DateTime.Now,
-                    UpdatedAt= DateTime.Now,
+                    UpdatedAt = DateTime.Now,
                 },
                 new Persons
                 {
@@ -60,6 +61,7 @@ namespace Data_Access_Layer.Models
                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                    CreatedAt = DateTime.Now,
                    UpdatedAt = DateTime.Now,
+                   TaskDeadline = DateTime.Now,
                },
                new Tasks
                {
@@ -68,6 +70,7 @@ namespace Data_Access_Layer.Models
                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                    CreatedAt = DateTime.Now,
                    UpdatedAt = DateTime.Now,
+                   TaskDeadline = DateTime.Now,
                },
                new Tasks
                {
@@ -76,6 +79,7 @@ namespace Data_Access_Layer.Models
                    Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                    CreatedAt = DateTime.Now,
                    UpdatedAt = DateTime.Now,
+                   TaskDeadline = DateTime.Now,
                }
            );
 
@@ -94,7 +98,7 @@ namespace Data_Access_Layer.Models
                     RequestedAt = DateTime.Now,
                     CompletedAt = DateTime.Now,
                 },
-                new RequestLogs
+                    new RequestLogs
                 {
                     Id = 3,
                     Route = "api/task/",
@@ -123,6 +127,38 @@ namespace Data_Access_Layer.Models
                     Route = "api/person",
                     ExceptionMessage = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.,",
                     LoggedAt = DateTime.Now,
+                }
+            );
+            modelBuilder.Entity<TaskAssignmentsLogs>().HasData(
+                new TaskAssignmentsLogs
+                {
+                    Id = 1,
+                    TaskId = 1,
+                    AssignedById = 1,
+                    AssignedToId = 2,
+                    CreatedAt = DateTime.Now,
+                    Status =  "Pending",
+                    CompletedAt = DateTime.Now,
+                },
+                new TaskAssignmentsLogs
+                {
+                    Id = 2,
+                    TaskId = 2,
+                    AssignedById = 3,
+                    AssignedToId = 2,
+                    CreatedAt = DateTime.Now,
+                    Status = "Pending",
+                    CompletedAt = DateTime.Now,
+                },
+                new TaskAssignmentsLogs
+                {
+                    Id = 3,
+                    TaskId = 3,
+                    AssignedById = 1,
+                    AssignedToId = 3,
+                    CreatedAt = DateTime.Now,
+                    Status = "Completed",
+                    CompletedAt = DateTime.Now,
                 }
             );
         }
