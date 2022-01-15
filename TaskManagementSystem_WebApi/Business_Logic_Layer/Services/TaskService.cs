@@ -112,15 +112,21 @@ namespace Business_Logic_Layer.Services
         }
 
         //Updates a task if it is found and sends right acknowledgement
-        public async Task<bool> UpdateAsync(int id, TaskDto taskDto)
+        public async Task<bool> UpdateAsync(int id, TaskUpdateModel taskUpdateModel)
         {
             string query = $"SELECT * FROM Tasks WHERE id={id};";
             var task = await _taskRepository.GetAsync(query);
             if (task != null)
             {
-                task.Title = taskDto.Title;
-                task.Description = taskDto.Description;
+                task.Title = taskUpdateModel.Title;
+                task.Description = taskUpdateModel.Description;
                 task.UpdatedAt = DateTime.Now;
+                 
+                //Change the status "Completed" or "Pending" in the task assignment log table
+                var taskLog = await _taskAssignmentService.GetByTaskId(id);
+                taskLog.Status = taskUpdateModel.Status;
+                await _taskAssignmentService.UpdateAsync(taskLog);
+
                 return await _taskRepository.UpdateAsync(task);
             }
             return false;

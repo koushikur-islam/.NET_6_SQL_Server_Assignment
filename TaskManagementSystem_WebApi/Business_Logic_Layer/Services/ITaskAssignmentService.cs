@@ -12,7 +12,7 @@ namespace Business_Logic_Layer.Services
         public Task<IEnumerable<TaskAssignmentLogDto>> GetAllAsync();
         public Task<TaskAssignmentLogDto> GetByTaskId(int id);
         public Task<bool> InsertAsync(TaskAssignmentLogDto taskAssignmentDto);
-        public Task UpdateAsync(int id, TaskAssignmentLogDto taskAssignmentDto);
+        public Task<bool> UpdateAsync(TaskAssignmentLogDto taskAssignmentDto);
         public Task<bool> DeleteAsync(TaskAssignmentLogDto taskAssignmentLogDto);
     }
 }

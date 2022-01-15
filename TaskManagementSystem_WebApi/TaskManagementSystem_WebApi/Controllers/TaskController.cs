@@ -78,20 +78,20 @@ namespace TaskManagementSystem_WebApi.Controllers
             return BadRequest("Invalid Model!");
         }
 
-        //Update a new task
+        //Update a task
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] TaskDto taskDto)
+        public async Task<IActionResult> Update(int id, [FromBody] TaskUpdateModel taskUpdateModel)
         {
             if (ModelState.IsValid)
             {
                 var task = await _taskService.GetAsync(id);
                 if (task != null)
                 {
-                    var res = await _taskService.UpdateAsync(id, taskDto);
+                    var res = await _taskService.UpdateAsync(id, taskUpdateModel);
                     if (res)
                     {
-                        task.Title = taskDto.Title;
-                        task.Description = taskDto.Description;
+                        task.Title = taskUpdateModel.Title;
+                        task.Description = taskUpdateModel.Description;
                         return Ok(task);
                     }
                     return BadRequest("Failed to update task!");

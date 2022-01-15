@@ -46,9 +46,9 @@ namespace Business_Logic_Layer.Services
 
         //Updates a record to the task assignment table when necessary.
         //Mainly used for setting status to "Complete" or "Pending" for any task.
-        public Task UpdateAsync(int id, TaskAssignmentLogDto taskAssignmentDto)
+        public async Task<bool> UpdateAsync(TaskAssignmentLogDto taskAssignmentDto)
         {
-            throw new NotImplementedException();
+            return await _taskAssignmentLogRepository.UpdateAsync(_mapper.Map<TaskAssignmentsLogs>(taskAssignmentDto));
         }
 
         //Takes a task assignment object as parameter and deletes it.
